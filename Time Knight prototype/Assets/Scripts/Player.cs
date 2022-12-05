@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public float playerSpeed = 5;
+    public bool jump = false;
+    public bool run = false;
+
     // Start is called before the first frame update
     void Start()
     {
