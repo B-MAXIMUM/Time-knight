@@ -4,20 +4,57 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    public float playerSpeed = 5;
-    public bool jump = false;
+    Rigidbody2D _PRB;
+    private Animator _playerAnim;
+    public float playerspeed = 5;
+    public bool toughingGround = false;
     public bool run = false;
+    private Collider2D _myCollider;
+    public bool isOnGround;
+    public float Jumpforce = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _PRB = GetComponent<Rigidbody2D>();
+        _myCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        PlayerMovement();
+
+        Cum();
+         float horizontalInput = Input.GetAxis("Horizontal");
+       float verticalInput = Input.GetAxis("Vertical");
+
+       transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * playerspeed);
+
+       transform.Translate(Vector2.up * playerspeed * Time.deltaTime * verticalInput);
+    }
+
+    void PlayerMovement()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
         
+        _PRB.velocity = new Vector2(horizontalInput * playerspeed, _PRB.velocity.y);
+    }
+
+    void Cum()
+    {
+            if(_myCollider.IsTouchingLayers(LayerMask.GetMask("ground")))
+            {
+                isOnGround = true;
+            }
+            else
+            {
+                isOnGround = false;
+            }
+
+        if(Input.GetButtonDown("Jump") && isOnGround)
+        {
+            _PRB.velocity = new Vector2(_PRB.velocity.x, Jumpforce);
+        }
     }
 }
