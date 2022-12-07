@@ -26,12 +26,10 @@ public class Player : MonoBehaviour
         PlayerMovement();
 
         Cum();
-         float horizontalInput = Input.GetAxis("Horizontal");
-       float verticalInput = Input.GetAxis("Vertical");
-
-       transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * playerspeed);
-
-       transform.Translate(Vector2.up * playerspeed * Time.deltaTime * verticalInput);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Jump");
+        transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * playerspeed);
+        transform.Translate(Vector2.up * playerspeed * Time.deltaTime * verticalInput);
     }
 
     void PlayerMovement()
