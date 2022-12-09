@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Collider2D _myCollider;
     public bool isOnGround;
     public float Jumpforce = 10;
+    public GameManager GameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,10 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
             _PRB.velocity = new Vector2(_PRB.velocity.x, Jumpforce);
+        }
+        if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Acid")))
+        {
+            GameManager.Gameover(true);
         }
     }
 }
