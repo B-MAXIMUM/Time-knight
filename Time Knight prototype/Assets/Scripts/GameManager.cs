@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public bool Gameover = false;
+    public bool IsGameover = false;
     public TextMeshProUGUI GameOverText;
     public GameObject canvas;
     public Button faggot;
@@ -23,5 +23,16 @@ public class GameManager : MonoBehaviour
         fuckle.gameObject.SetActive(true);
         canvas.gameObject.SetActive(false);
         Camera.gameObject.SetActive(false);
+    }
+    private void Update() 
+    {
+    
+    }
+    public void GameOver()
+    {
+        IsGameover = true;
+        canvas.gameObject.SetActive(true);
+        faggot.gameObject.SetActive(true);
+        GameOverText.gameObject.SetActive(true);
     }
 }

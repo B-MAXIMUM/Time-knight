@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         }
         if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Acid")))
         {
-            GameManager.Gameover(true);
+            GameManager.GameOver();
         }
     }
 }

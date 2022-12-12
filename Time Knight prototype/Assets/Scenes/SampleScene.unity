@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea643ed451998b4bb90ff595cc1c125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gameover: 0
+  IsGameover: 0
   GameOverText: {fileID: 1937971303}
   canvas: {fileID: 396939294}
   faggot: {fileID: 922814157}
@@ -641,6 +641,7 @@ MonoBehaviour:
   run: 0
   isOnGround: 0
   Jumpforce: 10
+  GameManager: {fileID: 83225905}
 --- !u!61 &473521615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -968,7 +969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 922814158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83225903}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &922814158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,7 +1166,8 @@ GameObject:
   - component: {fileID: 1294564799}
   - component: {fileID: 1294564801}
   - component: {fileID: 1294564800}
-  m_Layer: 0
+  - component: {fileID: 1294564802}
+  m_Layer: 3
   m_Name: Acid
   m_TagString: Acid
   m_Icon: {fileID: 0}
@@ -3834,6 +3848,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1294564802
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294564798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1372182382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,6 +4833,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005626756}
   m_CullTransparentMesh: 1
+--- !u!1 &2095920577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095920578}
+  m_Layer: 0
+  m_Name: Sceneloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095920578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095920577}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 48.354713, y: 10.417261, z: -1.1985722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132541812
 GameObject:
   m_ObjectHideFlags: 0
