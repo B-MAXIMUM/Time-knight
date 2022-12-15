@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool IsGameover = false;
     public TextMeshProUGUI GameOverText;
     public GameObject canvas;
+    public GameObject Nigaman;
     public Button faggot;
     public GameObject Title;
     public GameObject Camera;
@@ -34,5 +35,22 @@ public class GameManager : MonoBehaviour
         canvas.gameObject.SetActive(true);
         faggot.gameObject.SetActive(true);
         GameOverText.gameObject.SetActive(true);
+    }
+    public void GameCumlord()
+    {
+        canvas.gameObject.SetActive(true);
+        faggot.gameObject.SetActive(true);
+        QuitButt.gameObject.SetActive(true);
+        fuckle.gameObject.SetActive(false);
+        Camera.gameObject.SetActive(true);
+        Nigaman.gameObject.SetActive(true);
+    }
+    public void FuckingUrMom()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Queer()
+    {
+        Application.Quit();
     }
 }

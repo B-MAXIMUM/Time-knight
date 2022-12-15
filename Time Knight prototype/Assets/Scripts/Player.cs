@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D _PRB;
+    private Animator _PA;
     private Animator _playerAnim;
     public float playerspeed = 5;
     public bool toughingGround = false;
@@ -16,8 +17,10 @@ public class Player : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+
     {
         _PRB = GetComponent<Rigidbody2D>();
+        _PA = GetComponent<Animator>();
         _myCollider = GetComponent<Collider2D>();
     }
 
@@ -42,14 +45,14 @@ public class Player : MonoBehaviour
 
     void Cum()
     {
-            if(_myCollider.IsTouchingLayers(LayerMask.GetMask("ground")))
-            {
-                isOnGround = true;
-            }
-            else
-            {
-                isOnGround = false;
-            }
+        if(_myCollider.IsTouchingLayers(LayerMask.GetMask("ground")))
+        {                
+            isOnGround = true;
+        }
+        else
+        {
+            isOnGround = false;
+        }
 
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
@@ -58,6 +61,10 @@ public class Player : MonoBehaviour
         if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Acid")))
         {
             GameManager.GameOver();
+        }
+        if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Done")))
+        {
+            GameManager.GameCumlord();
         }
     }
 }
