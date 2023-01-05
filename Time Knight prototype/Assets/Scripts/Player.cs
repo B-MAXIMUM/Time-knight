@@ -41,17 +41,25 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         
         _PRB.velocity = new Vector2(horizontalInput * playerspeed, _PRB.velocity.y);
+        if(Mathf.Abs(horizontalInput)>0.1f)
+        {
+            _PA.SetBool("IsRun", true);
+        }
+        else
+        {
+            _PA.SetBool("IsRun", false);
+        }
     }
 
     void Cum()
     {
-        if(_myCollider.IsTouchingLayers(LayerMask.GetMask("ground")))
+        if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {                
-            isOnGround = true;
+            _PA.SetBool("DaAir", false);
         }
         else
         {
-            isOnGround = false;
+            _PA.SetBool("DaAir", true);
         }
 
         if(Input.GetButtonDown("Jump") && isOnGround)
@@ -65,6 +73,12 @@ public class Player : MonoBehaviour
         if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Done")))
         {
             GameManager.GameCumlord();
+        }
+
+        bool Moving = Mathf.Abs(_PRB.velocity.x) > Mathf.Epsilon;
+        if(Moving)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(_PRB.velocity.x), 1f);
         }
     }
 }

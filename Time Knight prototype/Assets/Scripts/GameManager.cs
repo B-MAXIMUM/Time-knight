@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Button faggot;
     public GameObject Title;
     public GameObject Camera;
+    public GameObject Camera2;
     public GameObject fuckle;
     public Button QuitButt;
     public Button StartButton;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         fuckle.gameObject.SetActive(true);
         canvas.gameObject.SetActive(false);
         Camera.gameObject.SetActive(false);
+        Camera2.gameObject.SetActive(true);
     }
     private void Update() 
     {
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         faggot.gameObject.SetActive(true);
         QuitButt.gameObject.SetActive(true);
         fuckle.gameObject.SetActive(false);
+        Camera2.gameObject.SetActive(false);
         Camera.gameObject.SetActive(true);
         Nigaman.gameObject.SetActive(true);
     }
