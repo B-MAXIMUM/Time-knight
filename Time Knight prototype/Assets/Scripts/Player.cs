@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public bool isOnGround;
     public float Jumpforce = 10;
     public GameManager GameManager;
+    public AudioClip Bob;
+    public AudioClip Pain;
+    private AudioSource _PAud;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour
     {
         _PRB = GetComponent<Rigidbody2D>();
         _PA = GetComponent<Animator>();
+        _PAud = GetComponent<AudioSource>();
         _myCollider = GetComponent<Collider2D>();
     }
 
@@ -65,10 +69,12 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
             _PRB.velocity = new Vector2(_PRB.velocity.x, Jumpforce);
+            _PAud.PlayOneShot(Bob, 1.0f);
         }
         if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Acid")))
         {
             GameManager.GameOver();
+            _PAud.PlayOneShot(Pain, 3.0f);
         }
         if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Done")))
         {
