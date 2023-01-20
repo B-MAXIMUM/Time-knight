@@ -470,9 +470,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2073978317}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FuckingUrMom
+      - m_Target: {fileID: 2073978319}
+        m_TargetAssemblyTypeName: Help, Assembly-CSharp
+        m_MethodName: cum
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -996,7 +996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073978318}
-  - component: {fileID: 2073978317}
+  - component: {fileID: 2073978319}
   m_Layer: 0
   m_Name: GayMAnager
   m_TagString: Untagged
@@ -1004,32 +1004,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2073978317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073978316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea643ed451998b4bb90ff595cc1c125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsGameover: 1
-  GameOverText: {fileID: 0}
-  canvas: {fileID: 0}
-  Nigaman: {fileID: 0}
-  Timer: {fileID: 0}
-  faggot: {fileID: 0}
-  Help: {fileID: 0}
-  Title: {fileID: 0}
-  Camera: {fileID: 0}
-  Camera2: {fileID: 0}
-  fuckle: {fileID: 0}
-  QuitButt: {fileID: 0}
-  StartButton: {fileID: 0}
-  Music: {fileID: 0}
 --- !u!4 &2073978318
 Transform:
   m_ObjectHideFlags: 0
@@ -1045,3 +1019,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2073978319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073978316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee098c51859e2d74698fddc00c0fd57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weiner: {fileID: 528089487}
